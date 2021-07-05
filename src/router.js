@@ -1,7 +1,7 @@
-import Vue from 'vue'
-import Router from 'vue-router'
+import Vue from 'vue';
+import Router from 'vue-router';
 
-Vue.use(Router)
+Vue.use(Router);
 
 export default new Router({
   mode: 'hash',
@@ -54,9 +54,13 @@ export default new Router({
         {
           name: 'Upgrade',
           path: 'upgrade',
-          component: () => import('@/views/dashboard/Upgrade'),
+          component: () => import('@/views/dashboard/Upgrade '),
         },
       ],
     },
+    {
+      path: '/login',
+      component: () => import('@/views/dashboard/Index'),
+    },
   ],
-})
+});
