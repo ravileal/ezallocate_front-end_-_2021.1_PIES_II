@@ -4,8 +4,8 @@ import Router from 'vue-router';
 Vue.use(Router);
 
 export default new Router({
-  mode: 'hash',
-  base: process.env.BASE_URL,
+  mode: 'history',
+  base: process.env.BASE_URL || '/',
   routes: [
     {
       path: '/',
@@ -54,13 +54,13 @@ export default new Router({
         {
           name: 'Upgrade',
           path: 'upgrade',
-          component: () => import('@/views/dashboard/Upgrade '),
+          component: () => import('@/views/dashboard/Upgrade'),
         },
       ],
     },
     {
-      path: '/login',
-      component: () => import('@/views/dashboard/Index'),
+      path: 'login',
+      component: () => import('@/views/login/Index'),
     },
   ],
 });
