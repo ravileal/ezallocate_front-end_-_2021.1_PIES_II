@@ -11,6 +11,8 @@
 </template>
 
 <script>
+import { Auth } from 'aws-amplify';
+
 export default {
   name: 'DashboardIndex',
 
@@ -24,5 +26,11 @@ export default {
   data: () => ({
     expandOnHover: false,
   }),
+  async beforeCreate() {
+    this.logado = await Auth.currentAuthenticatedUser()
+      .then(() => true)
+      .catch(() => false);
+    if (!this.logado) this.$router.push('/login');
+  },
 };
 </script>

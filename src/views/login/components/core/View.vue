@@ -1,6 +1,6 @@
 <template>
   <div>
-    <span> Olá mundo!</span>
+    <router-view />
   </div>
 </template>
 

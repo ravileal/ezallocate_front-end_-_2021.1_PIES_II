@@ -11,6 +11,7 @@
 //
 // * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
+import Amplify from 'aws-amplify';
 import Vue from 'vue';
 import App from './App.vue';
 import router from './router';
@@ -21,6 +22,11 @@ import './plugins/vee-validate';
 import vuetify from './plugins/vuetify';
 import i18n from './i18n';
 
+import awsconfig from './aws-exports';
+
+Amplify.configure(awsconfig);
+
+Vue.config.isCustomElement = tag => tag.startsWith('amplify-');
 Vue.config.productionTip = false;
 
 new Vue({
@@ -28,5 +34,5 @@ new Vue({
   store,
   vuetify,
   i18n,
-  render: (h) => h(App),
+  render: h => h(App),
 }).$mount('#app');

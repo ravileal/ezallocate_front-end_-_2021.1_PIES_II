@@ -1,9 +1,10 @@
 import Vue from 'vue';
 import Router from 'vue-router';
+import { Auth } from 'aws-amplify';
 
 Vue.use(Router);
 
-export default new Router({
+const router = new Router({
   mode: 'history',
   base: process.env.BASE_URL || '/',
   routes: [
@@ -59,8 +60,25 @@ export default new Router({
       ],
     },
     {
-      path: 'login',
+      path: '/login',
       component: () => import('@/views/login/Index'),
     },
   ],
 });
+
+router.beforeResolve((to, from, next) => {
+  if (to.matched.some(record => record.meta.requiresAuth)) {
+    Auth.currentAuthenticatedUser()
+      .then(() => {
+        next();
+      })
+      .catch(() => {
+        next({
+          path: '/login',
+        });
+      });
+  }
+  next();
+});
+
+export default router;
