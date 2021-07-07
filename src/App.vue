@@ -16,7 +16,6 @@ export default {
   },
   beforeCreate() {
     Hub.listen('auth', data => {
-      console.log('data:', data);
       const { payload } = data;
       if (payload.event === 'signIn') {
         this.signedIn = true;
@@ -28,7 +27,8 @@ export default {
       }
     });
     Auth.currentAuthenticatedUser()
-      .then(() => {
+      .then(data => {
+        console.log(data.attributes);
         this.signedIn = true;
       })
       .catch(() => {

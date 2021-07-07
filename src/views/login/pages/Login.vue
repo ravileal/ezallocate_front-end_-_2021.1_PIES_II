@@ -5,8 +5,8 @@
     <h4 class="error" v-if="erroLogin">Usuario ou senha inválidos</h4>
 
     <div class="formcontainer">
-      <input placeholder="usuario" v-model="usuario" class="input" />
-      <input placeholder="senha" type="password" v-model="senha" class="input" />
+      <input placeholder="email" type="email" v-model="user.username" class="input" />
+      <input placeholder="senha" type="password" v-model="user.password" class="input" />
       <button v-on:click="signIn" class="button">Entrar</button>
     </div>
 
@@ -18,17 +18,21 @@
 import { Auth } from 'aws-amplify';
 
 export default {
-  name: 'entrar',
+  name: 'Login',
   data() {
     return {
       carregando: false,
       erroLogin: false,
+      user: {
+        username: '',
+        password: '',
+      },
     };
   },
   methods: {
     async signIn() {
       this.carregando = true;
-      this.erroLogin = await Auth.signIn(this.usuario, this.senha)
+      this.erroLogin = await Auth.signIn(this.user.username, this.user.password)
         .then(() => false)
         .catch(() => true);
       this.carregando = false;
@@ -39,6 +43,6 @@ export default {
 
 <style scoped>
 .error {
-  color: red;
+  color: white;
 }
 </style>

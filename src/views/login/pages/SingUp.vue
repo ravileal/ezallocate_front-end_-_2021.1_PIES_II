@@ -5,9 +5,12 @@
     </h2>
 
     <div class="formcontainer" v-if="toggleCadastrar">
-      <input placeholder="usuario" v-model="usuario" class="input" />
-      <input placeholder="senha" type="password" v-model="senha" class="input" />
-      <input placeholder="email" v-model="email" class="input" />
+      <input placeholder="email" v-model="user.username" class="input" />
+      <input placeholder="senha" type="password" v-model="user.password" class="input" />
+      <input placeholder="nome" v-model="user.attributes.name" class="input" />
+      <input placeholder="endereço" v-model="user.attributes.address" class="input" />
+      <input placeholder="telefone" v-model="user.attributes.phone_number" class="input" />
+      <input placeholder="tipo" v-model="user.attributes['custom:type']" class="input" />
       <button v-on:click="cadastrar" class="button">Cadastrar</button>
     </div>
 
@@ -28,17 +31,27 @@ export default {
   data() {
     return {
       toggleCadastrar: true,
+      user: {
+        username: '',
+        password: '',
+        attributes: {
+          name: '',
+          address: '',
+          phone_number: '',
+          'custom:type': '',
+        },
+      },
+      authCode: '',
     };
   },
   methods: {
     async cadastrar() {
+      const customUser = {
+        ...this.user,
+        attributes: { ...this.user.attributes, phone_number: `+55${this.user.attributes.phone_number}` },
+      };
       try {
-        const user = {
-          username: this.usuario,
-          password: this.senha,
-          attributes: { email: this.email },
-        };
-        await Auth.signUp(user);
+        await Auth.signUp(customUser);
         this.toggleCadastrar = false;
       } catch (error) {
         console.log(error);
@@ -47,7 +60,7 @@ export default {
     },
     async confirmarCadastro() {
       try {
-        await Auth.confirmSignUp(this.usuario, this.authCode);
+        await Auth.confirmSignUp(this.user.username, this.authCode);
         alert('Cadastro realizado com sucesso! Realize o login para acessar o sistema');
         this.toggle();
       } catch (err) {
