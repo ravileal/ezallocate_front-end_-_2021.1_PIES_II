@@ -33,6 +33,7 @@
                   md="6"
                 >
                   <v-text-field
+                    :value="user.email"
                     color="blue"
                     class="purple-input"
                     label="Email"
@@ -45,6 +46,7 @@
                   md="4"
                 >
                   <v-text-field
+                    :value="user.phone_number"
                     color="blue"
                     label="Telefone"
                     class="purple-input"
@@ -56,6 +58,7 @@
                   md="6"
                 >
                   <v-text-field
+                    :value="user.name"
                     color="blue"
                     label="Nome Completo"
                     class="purple-input"
@@ -69,6 +72,7 @@
                   md="4"
                 >
                   <v-text-field
+                    :value="user.address"
                     color="blue"
                     label="Endereço"
                     class="purple-input"
@@ -80,6 +84,7 @@
                   md="4"
                 >
                   <v-text-field
+                    :value="user['custom:type']"
                     color="blue"
                     label="Tipo de Usuário"
                     class="purple-input"
@@ -131,7 +136,17 @@
 </template>
 
 <script>
+import { Auth } from 'aws-amplify';
+
 export default {
-  //
+  data() {
+    return {
+      user: '',
+    };
+  },
+  async beforeCreate() {
+    this.user = (await Auth.currentAuthenticatedUser()).attributes;
+    console.log(this.user);
+  },
 };
 </script>

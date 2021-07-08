@@ -27,8 +27,8 @@ export default {
       }
     });
     Auth.currentAuthenticatedUser()
-      .then(data => {
-        console.log(data.attributes);
+      .then(() => {
+        // console.log(data.attributes);
         this.signedIn = true;
       })
       .catch(() => {
