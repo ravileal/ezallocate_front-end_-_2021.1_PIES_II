@@ -1,5 +1,5 @@
 <template>
-  <div id="app">
+  <div id="app" >
     <router-view></router-view>
   </div>
 </template>
@@ -39,6 +39,13 @@ export default {
 </script>
 
 <style>
+#app{
+  height: 600px;
+  background-image: url("https://www.quixada.ufc.br/wp-content/uploads/2017/09/37172226552_7f640d31c8_h.jpg");
+  background-size: 100%;
+  background-repeat:no-repeat;
+  background-position:bottom;
+}
 .nav {
   display: flex;
 }

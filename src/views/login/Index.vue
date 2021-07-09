@@ -37,11 +37,12 @@ export default {
 
 <style>
 .auth {
-  margin: 0 auto;
+  margin: 400px auto;
   width: 460px;
 }
 .toggle {
   cursor: pointer;
   font-size: 18px;
+  margin-left: 85px;
 }
 </style>

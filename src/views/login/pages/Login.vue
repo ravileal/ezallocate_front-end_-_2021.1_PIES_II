@@ -1,17 +1,76 @@
 <template>
-  <div>
-    <h2>Entrar</h2>
+  <v-container
+    id="user-profile"
+    fluid
+    tag="section"
+  >
+    <v-row justify="center">
+      <v-col
+        cols="12"
+        md="8"
+      >
+        <base-material-card
+          color="blue"
+          hover-reveal
+          type="Bar"
+        >
+          <template v-slot:heading>
+            <div class="text-h3 font-weight-light text-center">
+              EzAllocate
+            </div>
+          </template>
 
-    <h4 class="error" v-if="erroLogin">Usuario ou senha inválidos</h4>
+          <v-form>
+            <v-container class="py-0">
+              <v-row>
 
-    <div class="formcontainer">
-      <input placeholder="email" type="email" v-model="user.username" class="input" />
-      <input placeholder="senha" type="password" v-model="user.password" class="input" />
-      <button v-on:click="signIn" class="button">Entrar</button>
-    </div>
+                <h4 class="error" v-if="erroLogin">Usuario ou senha inválidos</h4>
 
-    <h2 v-if="carregando">Carregando...</h2>
-  </div>
+                <v-col id="login-email"
+                  cols="12"
+                  md="12"
+                >
+                  <v-text-field
+                    v-model="user.username"
+                    color="blue"
+                    class="purple-input"
+                    label="Email"
+                    type="email"
+                  />
+                </v-col>
+
+                <v-col id="login-password"
+                  cols="12"
+                  md="12"
+                >
+                  <v-text-field
+                    v-model="user.password"
+                    color="blue"
+                    class="purple-input"
+                    label="Senha"
+                    type="password"
+                  />
+                </v-col>
+
+                <v-col
+                  cols="12"
+                  class="text-center"
+                >
+                  <v-btn
+                    v-on:click="signIn"
+                    color="blue"
+                    class="mr-0"
+                  >
+                    Entrar
+                  </v-btn>
+                </v-col>
+              </v-row>
+            </v-container>
+          </v-form>
+        </base-material-card>
+      </v-col>
+    </v-row>
+  </v-container>
 </template>
 
 <script>
@@ -44,5 +103,8 @@ export default {
 <style scoped>
 .error {
   color: white;
+  margin-top: 20px;
+  margin-left: 45px;
+  size: 1000px;
 }
 </style>
