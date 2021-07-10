@@ -1,3 +1,4 @@
+
 module.exports = {
   root: true,
   parserOptions: {
@@ -37,5 +38,6 @@ module.exports = {
     'object-curly-newline': 'off',
     'consistent-return': 'off',
     'no-console': 'off',
+    'linebreak-style': ['error', 'windows'],
   },
 };

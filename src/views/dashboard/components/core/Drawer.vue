@@ -5,7 +5,7 @@
     :dark="barColor !== 'rgba(228, 226, 226, 1), rgba(255, 255, 255, 0.7)'"
     :expand-on-hover="expandOnHover"
     :right="$vuetify.rtl"
-    :src="barImage"
+    src="https://media.discordapp.net/attachments/780442072917737542/862817737839738920/unknown.png?width=296&height=682"
     mobile-break-point="960"
     app
     width="260"

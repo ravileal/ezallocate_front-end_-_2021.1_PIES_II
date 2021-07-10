@@ -24,7 +24,7 @@
 
         <v-spacer class="hidden-sm-and-down" />
 
-        <v-col
+        <!--<v-col
           cols="12"
           md="auto"
         >
@@ -35,7 +35,7 @@
             </v-icon>
             by <a href="https://www.creative-tim.com">Creative Tim</a> for a better web.
           </div>
-        </v-col>
+        </v-col>-->
       </v-row>
     </v-container>
   </v-footer>
@@ -44,20 +44,11 @@
 <script>
 export default {
   name: 'DashboardCoreFooter',
-
   data: () => ({
     links: [
       {
         href: '#',
-        text: 'Creative Tim',
-      },
-      {
-        href: '#',
         text: 'About Us',
-      },
-      {
-        href: '#',
-        text: 'Blog',
       },
       {
         href: '#',
