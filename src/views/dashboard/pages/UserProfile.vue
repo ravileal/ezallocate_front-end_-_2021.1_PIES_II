@@ -15,7 +15,7 @@
           type="Bar"
         >
           <template v-slot:heading>
-            <div class="text-h3 font-weight-light">
+            <div class="text-h3 font-weight-light" id="text-edit-profile">
               Edite seu Perfil
             </div>
 
@@ -28,11 +28,12 @@
             <v-container class="py-0">
               <v-row>
 
-                <v-col id="edit-email"
+                <v-col
                   cols="12"
                   md="6"
                 >
                   <v-text-field
+                    id="edit-email"
                     :value="user.email"
                     color="blue"
                     class="purple-input"
@@ -41,11 +42,12 @@
                   />
                 </v-col>
 
-                <v-col id="edit-telefone"
+                <v-col
                   cols="12"
                   md="4"
                 >
                   <v-text-field
+                    id="edit-telefone"
                     :value="user.phone_number"
                     color="blue"
                     label="Telefone"
@@ -53,11 +55,12 @@
                   />
                 </v-col>
 
-                <v-col id="edit-nome"
+                <v-col
                   cols="12"
                   md="6"
                 >
                   <v-text-field
+                    id="edit-nome"
                     :value="user.name"
                     color="blue"
                     label="Nome Completo"
@@ -67,11 +70,12 @@
 
                 <br/>
 
-                <v-col id="edit-endereco"
+                <v-col
                   cols="12"
                   md="4"
                 >
                   <v-text-field
+                    id="edit-endereco"
                     :value="user.address"
                     color="blue"
                     label="Endereço"
@@ -79,11 +83,12 @@
                   />
                 </v-col>
 
-                <v-col id="edit-type-user"
+                <v-col
                   cols="12"
                   md="4"
                 >
                   <v-text-field
+                    id="edit-type-user"
                     :value="user['custom:type']"
                     color="blue"
                     label="Tipo de Usuário"
@@ -91,11 +96,12 @@
                   />
                 </v-col>
 
-                <v-col id="edit-password"
+                <v-col
                   cols="12"
                   md="3"
                 >
                   <v-text-field
+                    id="edit-password"
                     color="blue"
                     class="purple-input"
                     label="Senha"
@@ -103,11 +109,12 @@
                   />
                 </v-col>
 
-                <v-col id="edit-password2"
+                <v-col
                   cols="12"
                   md="3"
                 >
                   <v-text-field
+                    id="edit-password2"
                     color="blue"
                     class="purple-input"
                     label="Confirme sua senha"
@@ -120,6 +127,7 @@
                   class="text-left"
                 >
                   <v-btn
+                    id="btn-editProfile"
                     color="blue"
                     class="mr-0"
                   >
