@@ -20,11 +20,13 @@
     <v-list dense nav>
       <v-list-item>
         <v-list-item-avatar class="align-self-center" color="white" contain>
-          <v-img src="https://demos.creative-tim.com/vuetify-material-dashboard/favicon.ico" max-height="30" />
+          <!-- <v-img src="https://demos.creative-tim.com/vuetify-material-dashboard/favicon.ico" max-height="30" /> -->
+          <v-img src="https://www.facom.ufms.br/wp-content/uploads/2018/07/palestra.png"/>
         </v-list-item-avatar>
 
         <v-list-item-content>
-          <v-list-item-title class="text-h4" v-text="profile.title" />
+          <!-- <v-list-item-title class="text-h4" v-text="profile.title" /> -->
+          <p class="align-self-center" style="margin-top: 25px">Nome do Usuário<p/>
         </v-list-item-content>
       </v-list-item>
     </v-list>
@@ -38,7 +40,7 @@
 
       <template v-for="(item, i) in computedItems">
         <base-item-group v-if="item.children" :key="`group-${i}`" :item="item">
-          <!--  -->
+
         </base-item-group>
 
         <base-item v-else :key="`item-${i}`" :item="item" />
@@ -59,6 +61,7 @@
 </template>
 
 <script>
+
 // Utilities
 import { mapState } from 'vuex';
 import { Auth } from 'aws-amplify';
@@ -85,31 +88,31 @@ export default {
         title: 'user',
         to: '/pages/user',
       },
-      {
-        title: 'rtables',
-        icon: 'mdi-clipboard-outline',
-        to: '/tables/regular-tables',
-      },
-      {
-        title: 'typography',
-        icon: 'mdi-format-font',
-        to: '/components/typography',
-      },
-      {
-        title: 'icons',
-        icon: 'mdi-chart-bubble',
-        to: '/components/icons',
-      },
-      {
-        title: 'google',
-        icon: 'mdi-map-marker',
-        to: '/maps/google-maps',
-      },
-      {
-        title: 'notifications',
-        icon: 'mdi-bell',
-        to: '/components/notifications',
-      },
+      // {
+      //   title: 'rtables',
+      //   icon: 'mdi-clipboard-outline',
+      //   to: '/tables/regular-tables',
+      // },
+      // {
+      //   title: 'typography',
+      //   icon: 'mdi-format-font',
+      //   to: '/components/typography',
+      // },
+      // {
+      //   title: 'icons',
+      //   icon: 'mdi-chart-bubble',
+      //   to: '/components/icons',
+      // },
+      // {
+      //   title: 'google',
+      //   icon: 'mdi-map-marker',
+      //   to: '/maps/google-maps',
+      // },
+      // {
+      //   title: 'notifications',
+      //   icon: 'mdi-bell',
+      //   to: '/components/notifications',
+      // },
     ],
   }),
 
@@ -148,7 +151,9 @@ export default {
         .catch(err => console.log(err));
     },
   },
+
 };
+
 </script>
 
 <style lang="sass">

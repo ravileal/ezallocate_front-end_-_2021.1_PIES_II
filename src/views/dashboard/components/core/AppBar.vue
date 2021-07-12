@@ -30,7 +30,7 @@
 
     <v-spacer />
 
-    <v-text-field
+    <!-- <v-text-field
       :label="$t('search')"
       color="secondary"
       hide-details
@@ -49,7 +49,7 @@
           <v-icon>mdi-magnify</v-icon>
         </v-btn>
       </template>
-    </v-text-field>
+    </v-text-field> -->
 
     <div class="mx-3" />
 
@@ -69,7 +69,7 @@
       origin="top right"
       transition="scale-transition"
     >
-      <template v-slot:activator="{ attrs, on }">
+      <!-- <template v-slot:activator="{ attrs, on }">
         <v-btn
           class="ml-2"
           min-width="0"
@@ -89,7 +89,7 @@
             <v-icon>mdi-bell</v-icon>
           </v-badge>
         </v-btn>
-      </template>
+      </template> -->
 
       <v-list
         :tile="false"

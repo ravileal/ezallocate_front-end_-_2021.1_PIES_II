@@ -1,5 +1,5 @@
-<template>
-  <div id="settings-wrapper">
+<!-- <template> -->
+  <!-- <div id="settings-wrapper">
     <v-card
       id="settings"
       class="py-2 px-4"
@@ -182,7 +182,7 @@
       </v-card>
     </v-menu>
   </div>
-</template>
+</template> -->
 
 <script>
 // Mixins
