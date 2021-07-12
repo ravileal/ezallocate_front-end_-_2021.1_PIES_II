@@ -20,11 +20,6 @@
             </div>
           </template>
 
-          <div class="text-h3 font-weight-light text-center" id="signup-text">
-            <br/>
-            Complete seu cadastro
-          </div>
-
           <v-form
             v-if="toggleCadastrar"
             class="formcontainer"
@@ -41,7 +36,7 @@
                     v-model="user.username"
                     color="blue"
                     class="purple-input"
-                    label="Email"
+                    label="Email *"
                     type="email"
                   />
                 </v-col>
@@ -55,7 +50,7 @@
                     v-model="user.password"
                     color="blue"
                     class="purple-input"
-                    label="Senha"
+                    label="Senha *"
                     type="password"
                   />
                 </v-col>
@@ -69,7 +64,7 @@
                     v-model="user.attributes.name"
                     color="blue"
                     class="purple-input"
-                    label="Nome Completo"
+                    label="Nome Completo *"
                   />
                 </v-col>
 
@@ -82,7 +77,7 @@
                     v-model="user.attributes.phone_number"
                     color="blue"
                     class="purple-input"
-                    label="Telefone"
+                    label="Telefone *"
                   />
                 </v-col>
 
@@ -95,7 +90,7 @@
                     v-model="user.attributes.address"
                     color="blue"
                     class="purple-input"
-                    label="Endereço"
+                    label="Endereço *"
                   />
                 </v-col>
 
@@ -108,9 +103,13 @@
                     v-model="user.attributes['custom:type']"
                     color="blue"
                     class="purple-input"
-                    label="Tipo de Usuário"
+                    label="Tipo de Usuário *"
                   />
                 </v-col>
+
+                <div class="font-weight-light text-center" id="texto-obrigatorio" v-if="toggleCadastrar" >
+                    * Campo obrigatório
+                </div>
 
                 <v-col
                   cols="12"
@@ -256,6 +255,11 @@ export default {
 
 #signup-auth-col{
   padding-left: 158px;
+}
+
+#texto-obrigatorio{
+  color: red;
+  padding-left: 12px;
 }
 
 </style>

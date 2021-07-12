@@ -6,8 +6,8 @@
   >
     <v-row justify="center">
       <v-col
-        cols="12"
-        md="8"
+        cols="16"
+        md="10"
       >
         <base-material-card
           color="blue"
@@ -24,13 +24,14 @@
             <v-container class="py-0">
               <v-row>
 
-                <h4 class="error" v-if="erroLogin">Usuario ou senha inválidos</h4>
+                <h4 class="error" id="login-error" v-if="erroLogin">Usuario ou senha inválidos</h4>
 
-                <v-col id="login-email"
+                <v-col
                   cols="12"
                   md="12"
                 >
                   <v-text-field
+                    id="login-email"
                     v-model="user.username"
                     color="blue"
                     class="purple-input"
@@ -39,11 +40,12 @@
                   />
                 </v-col>
 
-                <v-col id="login-password"
+                <v-col
                   cols="12"
                   md="12"
                 >
                   <v-text-field
+                    id="login-password"
                     v-model="user.password"
                     color="blue"
                     class="purple-input"
@@ -57,6 +59,7 @@
                   class="text-center"
                 >
                   <v-btn
+                    id="btn-login"
                     v-on:click="signIn"
                     color="blue"
                     class="mr-0"
