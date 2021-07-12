@@ -1,24 +1,179 @@
 <template>
-  <div>
-    <h2>
-      {{ toggleCadastrar ? 'Cadastrar' : 'Confirmar cadastro' }}
-    </h2>
+  <v-container
+    id="signup-section"
+    fluid
+    tag="section"
+  >
+    <v-row justify="center">
+      <v-col
+        cols="16"
+        md="16"
+      >
+        <base-material-card
+          color="blue"
+          hover-reveal
+          type="Bar"
+        >
+          <template v-slot:heading>
+            <div class="text-h3 font-weight-light text-center" >
+              EzAllocate
+            </div>
+          </template>
 
-    <div class="formcontainer" v-if="toggleCadastrar">
-      <input placeholder="email" v-model="user.username" class="input" />
-      <input placeholder="senha" type="password" v-model="user.password" class="input" />
-      <input placeholder="nome" v-model="user.attributes.name" class="input" />
-      <input placeholder="endereço" v-model="user.attributes.address" class="input" />
-      <input placeholder="telefone" v-model="user.attributes.phone_number" class="input" />
-      <input placeholder="tipo" v-model="user.attributes['custom:type']" class="input" />
-      <button v-on:click="cadastrar" class="button">Cadastrar</button>
-    </div>
+          <div class="text-h3 font-weight-light text-center" id="signup-text">
+            <br/>
+            Complete seu cadastro
+          </div>
 
-    <div class="formcontainer" v-if="!toggleCadastrar">
-      <input placeholder="código de confirmação" v-model="authCode" class="input" />
-      <button v-on:click="confirmarCadastro" class="button">Confirmar cadastro</button>
-    </div>
-  </div>
+          <v-form
+            v-if="toggleCadastrar"
+            class="formcontainer"
+            id="signup-form">
+            <v-container class="py-0">
+              <v-row>
+
+                <v-col
+                  cols="12"
+                  md="8"
+                >
+                  <v-text-field
+                    id="signup-email"
+                    v-model="user.username"
+                    color="blue"
+                    class="purple-input"
+                    label="Email"
+                    type="email"
+                  />
+                </v-col>
+
+                <v-col
+                  cols="12"
+                  md="4"
+                >
+                  <v-text-field
+                    id="signup-password"
+                    v-model="user.password"
+                    color="blue"
+                    class="purple-input"
+                    label="Senha"
+                    type="password"
+                  />
+                </v-col>
+
+                <v-col
+                  cols="12"
+                  md="8"
+                >
+                  <v-text-field
+                    id="signup-nome"
+                    v-model="user.attributes.name"
+                    color="blue"
+                    class="purple-input"
+                    label="Nome Completo"
+                  />
+                </v-col>
+
+                <v-col
+                  cols="12"
+                  md="4"
+                >
+                  <v-text-field
+                    id="signup-telefone"
+                    v-model="user.attributes.phone_number"
+                    color="blue"
+                    class="purple-input"
+                    label="Telefone"
+                  />
+                </v-col>
+
+                <v-col
+                  cols="12"
+                  md="8"
+                >
+                  <v-text-field
+                    id="signup-endereco"
+                    v-model="user.attributes.address"
+                    color="blue"
+                    class="purple-input"
+                    label="Endereço"
+                  />
+                </v-col>
+
+                <v-col
+                  cols="12"
+                  md="4"
+                >
+                  <v-text-field
+                    id="signup-tipoUsuario"
+                    v-model="user.attributes['custom:type']"
+                    color="blue"
+                    class="purple-input"
+                    label="Tipo de Usuário"
+                  />
+                </v-col>
+
+                <v-col
+                  cols="12"
+                  class="text-center"
+                >
+                  <v-btn
+                    id="btn-signup"
+                    v-on:click="cadastrar"
+                    color="blue"
+                    class="mr-0"
+                  >
+                    Realizar Cadastro
+                  </v-btn>
+                </v-col>
+
+              </v-row>
+            </v-container>
+          </v-form>
+
+              <v-form
+                v-if="!toggleCadastrar"
+                class="formcontainer"
+                id="signup-auth">
+                <v-container class="py-0">
+                  <v-row>
+
+                    <v-col
+                      class="text-center"
+                      cols="12"
+                      md="8"
+                      id="signup-auth-col"
+                    >
+                      <v-text-field
+                        id="signup-authCode"
+                        v-model="authCode"
+                        color="blue"
+                        class="purple-input"
+                        label="Código de Confirmação"
+                      />
+                    </v-col>
+
+                    <v-col
+                      cols="12"
+                      class="text-center"
+                    >
+                      <v-btn
+                        id="btn-signupConfirm"
+                        v-on:click="confirmarCadastro"
+                        color="blue"
+                        class="mr-0"
+                      >
+                        Confirmar Cadastro
+                      </v-btn>
+                    </v-col>
+
+                  </v-row>
+                </v-container>
+              </v-form>
+
+        </base-material-card>
+      </v-col>
+    </v-row>
+  </v-container>
 </template>
 
 <script>
@@ -98,4 +253,9 @@ export default {
 .button:hover {
   opacity: 0.7;
 }
+
+#signup-auth-col{
+  padding-left: 158px;
+}
+
 </style>
