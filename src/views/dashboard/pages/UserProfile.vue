@@ -76,7 +76,7 @@
                     id="edit-password"
                     color="blue"
                     class="purple-input"
-                    label="Senha"
+                    label="Senha Atual"
                     v-model="password.old"
                     type="password"
                   />
