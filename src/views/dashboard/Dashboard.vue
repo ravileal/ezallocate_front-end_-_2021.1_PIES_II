@@ -109,8 +109,8 @@
           </h4>
 
           <a id="btn-bloco-1"
-            href="https://www.google.com.br"
-            target="_blank"
+            href="/tables/regular-tables"
+            target="_self"
             class="d-inline-flex font-weight-light ml-2 mt-1"
             style="text-decoration: none; color: gray"
           >
