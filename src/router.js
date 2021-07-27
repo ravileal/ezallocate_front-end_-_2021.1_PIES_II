@@ -51,6 +51,18 @@ const router = new Router({
           path: 'maps/google-maps',
           component: () => import('@/views/dashboard/maps/GoogleMaps'),
         },
+        // Bloco
+        {
+          name: 'Bloco',
+          path: 'bloco',
+          component: () => import('@/views/blocos/pagesBlocos/Bloco'),
+        },
+        // Sala
+        {
+          name: 'Sala',
+          path: 'sala',
+          component: () => import('@/views/blocos/pagesSalas/Sala'),
+        },
       ],
     },
     {

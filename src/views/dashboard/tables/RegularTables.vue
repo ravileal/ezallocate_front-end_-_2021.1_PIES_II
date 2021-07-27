@@ -42,7 +42,7 @@
             <td> Aula de Matemática Discreta </td>
             <td>
 
-              <!-- <template>
+              <template>
                 <div class="">
                   <v-dialog
                     v-model="dialog"
@@ -82,7 +82,7 @@
                     </v-card>
                   </v-dialog>
                 </div>
-              </template> -->
+              </template>
 
             </td>
             <td>
@@ -104,7 +104,7 @@
               <template>
                 <div class="">
                   <v-dialog
-                    v-model="dialog"
+                    v-model="dialog2"
                     width="500"
                   >
                     <template v-slot:activator="{ on, attrs }">
@@ -136,7 +136,7 @@
 
                       <v-card-actions>
                         <v-spacer></v-spacer>
-                        <v-btn color="green" text @click="dialog = false"> OK </v-btn>
+                        <v-btn color="green" text @click="dialog2 = false"> OK </v-btn>
                       </v-card-actions>
                     </v-card>
                   </v-dialog>
@@ -160,10 +160,10 @@
             <td> Sala Livre </td>
             <td>
 
-              <!-- <template>
+              <template>
                 <div class="">
                   <v-dialog
-                    v-model="dialog"
+                    v-model="dialog3"
                     width="500"
                   >
                     <template v-slot:activator="{ on, attrs }">
@@ -195,12 +195,12 @@
 
                       <v-card-actions>
                         <v-spacer></v-spacer>
-                        <v-btn color="green" text @click="dialog = false"> OK </v-btn>
+                        <v-btn color="green" text @click="dialog3 = false"> OK </v-btn>
                       </v-card-actions>
                     </v-card>
                   </v-dialog>
                 </div>
-              </template> -->
+              </template>
 
             </td>
             <td>
@@ -219,10 +219,10 @@
             <td> Sala Livre </td>
             <td>
 
-              <!-- <template>
+              <template>
                 <div class="">
                   <v-dialog
-                    v-model="dialog"
+                    v-model="dialog4"
                     width="500"
                   >
                     <template v-slot:activator="{ on, attrs }">
@@ -254,12 +254,12 @@
 
                       <v-card-actions>
                         <v-spacer></v-spacer>
-                        <v-btn color="green" text @click="dialog = false"> OK </v-btn>
+                        <v-btn color="green" text @click="dialog4 = false"> OK </v-btn>
                       </v-card-actions>
                     </v-card>
                   </v-dialog>
                 </div>
-              </template> -->
+              </template>
 
             </td>
             <td>
@@ -278,10 +278,10 @@
             <td> Célula de CS </td>
             <td>
 
-              <!-- <template>
+              <template>
                 <div class="">
                   <v-dialog
-                    v-model="dialog"
+                    v-model="dialog5"
                     width="500"
                   >
                     <template v-slot:activator="{ on, attrs }">
@@ -313,12 +313,12 @@
 
                       <v-card-actions>
                         <v-spacer></v-spacer>
-                        <v-btn color="green" text @click="dialog = false"> OK </v-btn>
+                        <v-btn color="green" text @click="dialog5 = false"> OK </v-btn>
                       </v-card-actions>
                     </v-card>
                   </v-dialog>
                 </div>
-              </template> -->
+              </template>
 
             </td>
             <td>
@@ -337,10 +337,10 @@
             <td> Sala Livre </td>
             <td>
 
-              <!-- <template>
+              <template>
                 <div class="">
                   <v-dialog
-                    v-model="dialog"
+                    v-model="dialog6"
                     width="500"
                   >
                     <template v-slot:activator="{ on, attrs }">
@@ -372,12 +372,12 @@
 
                       <v-card-actions>
                         <v-spacer></v-spacer>
-                        <v-btn color="green" text @click="dialog = false"> OK </v-btn>
+                        <v-btn color="green" text @click="dialog6 = false"> OK </v-btn>
                       </v-card-actions>
                     </v-card>
                   </v-dialog>
                 </div>
-              </template> -->
+              </template>
 
             </td>
             <td>
@@ -407,6 +407,11 @@ export default {
   data() {
     return {
       dialog: false,
+      dialog2: false,
+      dialog3: false,
+      dialog4: false,
+      dialog5: false,
+      dialog6: false,
     };
   },
 };
