@@ -20,80 +20,66 @@
 
     <v-card>
       <v-card-title>
-        <span class="text-h5">Solicitar Reserva</span>
+        <span class="text-h3">Solicitar Reserva</span>
       </v-card-title>
       <v-card-text>
         <v-container>
           <v-row>
             <v-col
               cols="12"
-              sm="6"
-              md="4"
             >
               <v-text-field
-                label="Legal first name*"
+                label="Descrição da atividade*"
                 required
               ></v-text-field>
             </v-col>
+
             <v-col
               cols="12"
-              sm="6"
-              md="4"
-            >
-              <v-text-field
-                label="Legal middle name"
-                hint="example of helper text only on focus"
-              ></v-text-field>
-            </v-col>
-            <v-col
-              cols="12"
-              sm="6"
-              md="4"
-            >
-              <v-text-field
-                label="Legal last name*"
-                hint="example of persistent helper text"
-                persistent-hint
-                required
-              ></v-text-field>
-            </v-col>
-            <v-col cols="12">
-              <v-text-field
-                label="Email*"
-                required
-              ></v-text-field>
-            </v-col>
-            <v-col cols="12">
-              <v-text-field
-                label="Password*"
-                type="password"
-                required
-              ></v-text-field>
-            </v-col>
-            <v-col
-              cols="12"
-              sm="6"
+
             >
               <v-select
-                :items="['0-17', '18-29', '30-54', '54+']"
-                label="Age*"
-                required
+                :items="['Camilo', 'Wladmir', 'Diana', 'Carla']"
+                label="Escolha o professor responsável"
               ></v-select>
             </v-col>
+
+            <v-card-title>
+              <span class="text-h5">Frequência de uso</span>
+            </v-card-title>
+
+            <template>
+              <v-container fluid class="align-center">
+                <v-radio-group
+                  v-model="row"
+                  row
+                >
+                  <v-radio
+                    label="Semanalmente"
+                    value="semanalmente"
+                  ></v-radio>
+                  <v-radio
+                    label="Até o fim do semestre"
+                    value="fimSemestre"
+                  ></v-radio>
+                </v-radio-group>
+              </v-container>
+            </template>
+
             <v-col
               cols="12"
-              sm="6"
             >
-              <v-autocomplete
-                :items="['Skiing', 'Ice hockey', 'Soccer', 'Basketball', 'Hockey', 'Reading', 'Writing', 'Coding', 'Basejump']"
-                label="Interests"
-                multiple
-              ></v-autocomplete>
+              <v-select
+                :items="['1 semana', '2 semanas', '3 semanas', '4 semanas']"
+                label="Indique o período para reserva"
+              ></v-select>
             </v-col>
+
           </v-row>
         </v-container>
-        <small>*indicates required field</small>
+        <small>*Campos Obrigatórios</small>
       </v-card-text>
+
       <v-card-actions>
         <v-spacer></v-spacer>
         <v-btn
@@ -101,14 +87,14 @@
           text
           @click="dialog = false"
         >
-          Close
+          Cancelar
         </v-btn>
         <v-btn
           color="blue darken-1"
           text
           @click="dialog = false"
         >
-          Save
+          Confirmar Solicitação
         </v-btn>
       </v-card-actions>
     </v-card>
