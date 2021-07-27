@@ -88,12 +88,12 @@ export default {
         title: 'user',
         to: '/pages/user',
       },
-      {
-        // title: 'rtables',
-        title: 'Salas',
-        icon: 'mdi-clipboard-outline',
-        to: '/tables/regular-tables',
-      },
+      // {
+      //   // title: 'rtables',
+      //   title: 'Salas',
+      //   icon: 'mdi-clipboard-outline',
+      //   to: '/tables/regular-tables',
+      // },
       // {
       //   title: 'typography',
       //   icon: 'mdi-format-font',

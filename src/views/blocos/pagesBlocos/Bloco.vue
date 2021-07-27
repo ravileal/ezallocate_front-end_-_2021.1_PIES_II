@@ -6,62 +6,27 @@
   >
     <v-row>
 
-      <v-col id="col-bloco-1"
+      <v-col id="col-sala-1"
         cols="12"
-        lg="4"
+        lg="3"
       >
         <base-material-chart-card
           color="blue"
           hover-reveal
           type="Bar"
         >
-          <template v-slot:reveal-actions>
-            <v-tooltip bottom>
-              <template v-slot:activator="{ attrs, on }">
-                <v-btn
-                  v-bind="attrs"
-                  color="info"
-                  icon
-                  v-on="on"
-                >
-                  <v-icon
-                    color="info"
-                  >
-                    mdi-refresh
-                  </v-icon>
-                </v-btn>
-              </template>
-
-              <span>Refresh</span>
-            </v-tooltip>
-
-            <v-tooltip bottom>
-              <template v-slot:activator="{ attrs, on }">
-                <v-btn
-                  v-bind="attrs"
-                  light
-                  icon
-                  v-on="on"
-                >
-                  <v-icon>mdi-pencil</v-icon>
-                </v-btn>
-              </template>
-
-              <span>Change Date</span>
-            </v-tooltip>
-          </template>
 
           <h4 class="card-title font-weight-light mt-2 ml-2">
-            Bloco 1
+            Sala 1
           </h4>
 
           <a id="btn-bloco-1"
-            v-on:click="goToPageBlock(1)"
+            v-on:click="goToPageSala()"
             target="_self"
             class="d-inline-flex font-weight-light ml-2 mt-1"
             style="text-decoration: none; color: gray"
           >
-            Clique aqui para ver as salas existentes neste bloco.
+            Clique aqui para visualizar horários da sala.
           </a>
 
           <template v-slot:actions>
@@ -69,62 +34,27 @@
         </base-material-chart-card>
       </v-col>
 
-      <v-col id="col-bloco-2"
+      <v-col id="col-sala-2"
         cols="12"
-        lg="4"
+        lg="3"
       >
         <base-material-chart-card
           color="blue"
           hover-reveal
-          type="Line"
+          type="Bar"
         >
-          <template v-slot:reveal-actions>
-            <v-tooltip bottom>
-              <template v-slot:activator="{ attrs, on }">
-                <v-btn
-                  v-bind="attrs"
-                  color="info"
-                  icon
-                  v-on="on"
-                >
-                  <v-icon
-                    color="info"
-                  >
-                    mdi-refresh
-                  </v-icon>
-                </v-btn>
-              </template>
-
-              <span>Refresh</span>
-            </v-tooltip>
-
-            <v-tooltip bottom>
-              <template v-slot:activator="{ attrs, on }">
-                <v-btn
-                  v-bind="attrs"
-                  light
-                  icon
-                  v-on="on"
-                >
-                  <v-icon>mdi-pencil</v-icon>
-                </v-btn>
-              </template>
-
-              <span>Change Date</span>
-            </v-tooltip>
-          </template>
 
           <h4 class="card-title font-weight-light mt-2 ml-2">
-            Bloco 2
+            Sala 2
           </h4>
 
-          <a id="btn-bloco-2"
-            v-on:click="goToPageBlock(2)"
-            target="_blank"
+          <a id="btn-bloco-1"
+            v-on:click="goToPageSala()"
+            target="_self"
             class="d-inline-flex font-weight-light ml-2 mt-1"
             style="text-decoration: none; color: gray"
           >
-            Clique aqui para ver as salas existentes neste bloco.
+            Clique aqui para visualizar horários da sala.
           </a>
 
           <template v-slot:actions>
@@ -132,124 +62,167 @@
         </base-material-chart-card>
       </v-col>
 
-      <v-col id="col-bloco-3"
+      <v-col id="col-sala-3"
         cols="12"
-        lg="4"
-      >
-        <base-material-chart-card
-          color="blue"
-          type="Line"
-        >
-          <template v-slot:reveal-actions>
-            <v-tooltip bottom>
-              <template v-slot:activator="{ attrs, on }">
-                <v-btn
-                  v-bind="attrs"
-                  color="info"
-                  icon
-                  v-on="on"
-                >
-                  <v-icon
-                    color="info"
-                  >
-                    mdi-refresh
-                  </v-icon>
-                </v-btn>
-              </template>
-
-              <span>Refresh</span>
-            </v-tooltip>
-
-            <v-tooltip bottom>
-              <template v-slot:activator="{ attrs, on }">
-                <v-btn
-                  v-bind="attrs"
-                  light
-                  icon
-                  v-on="on"
-                >
-                  <v-icon>mdi-pencil</v-icon>
-                </v-btn>
-              </template>
-
-              <span>Change Date</span>
-            </v-tooltip>
-          </template>
-
-          <h3 class="card-title font-weight-light mt-2 ml-2">
-            Bloco 3
-          </h3>
-
-          <a id="btn-bloco-3"
-            v-on:click="goToPageBlock(3)"
-            target="_blank"
-            class="d-inline-flex font-weight-light ml-2 mt-1"
-            style="text-decoration: none; color: gray"
-          >
-            Clique aqui para ver as salas existentes neste bloco.
-          </a>
-
-          <template v-slot:actions>
-          </template>
-        </base-material-chart-card>
-      </v-col>
-
-      <v-col id="col-bloco-4"
-        cols="12"
-        lg="4"
+        lg="3"
       >
         <base-material-chart-card
           color="blue"
           hover-reveal
-          type="Line"
+          type="Bar"
         >
-          <template v-slot:reveal-actions>
-            <v-tooltip bottom>
-              <template v-slot:activator="{ attrs, on }">
-                <v-btn
-                  v-bind="attrs"
-                  color="info"
-                  icon
-                  v-on="on"
-                >
-                  <v-icon
-                    color="info"
-                  >
-                    mdi-refresh
-                  </v-icon>
-                </v-btn>
-              </template>
-
-              <span>Refresh</span>
-            </v-tooltip>
-
-            <v-tooltip bottom>
-              <template v-slot:activator="{ attrs, on }">
-                <v-btn
-                  v-bind="attrs"
-                  light
-                  icon
-                  v-on="on"
-                >
-                  <v-icon>mdi-pencil</v-icon>
-                </v-btn>
-              </template>
-
-              <span>Change Date</span>
-            </v-tooltip>
-          </template>
 
           <h4 class="card-title font-weight-light mt-2 ml-2">
-            Bloco 4
+            Sala 3
           </h4>
 
-          <a id="btn-bloco-4"
-            v-on:click="goToPageBlock(4)"
-            target="_blank"
+          <a id="btn-bloco-1"
+            v-on:click="goToPageSala()"
+            target="_self"
             class="d-inline-flex font-weight-light ml-2 mt-1"
             style="text-decoration: none; color: gray"
           >
-            Clique aqui para ver as salas existentes neste bloco.
+            Clique aqui para visualizar horários da sala.
+          </a>
+
+          <template v-slot:actions>
+          </template>
+        </base-material-chart-card>
+      </v-col>
+
+      <v-col id="col-sala-4"
+        cols="12"
+        lg="3"
+      >
+        <base-material-chart-card
+          color="blue"
+          hover-reveal
+          type="Bar"
+        >
+
+          <h4 class="card-title font-weight-light mt-2 ml-2">
+            Sala 4
+          </h4>
+
+          <a id="btn-bloco-1"
+            v-on:click="goToPageSala()"
+            target="_self"
+            class="d-inline-flex font-weight-light ml-2 mt-1"
+            style="text-decoration: none; color: gray"
+          >
+            Clique aqui para visualizar horários da sala.
+          </a>
+
+          <template v-slot:actions>
+          </template>
+        </base-material-chart-card>
+      </v-col>
+
+      <v-col id="col-sala-5"
+        cols="12"
+        lg="3"
+      >
+        <base-material-chart-card
+          color="blue"
+          hover-reveal
+          type="Bar"
+        >
+
+          <h4 class="card-title font-weight-light mt-2 ml-2">
+            Sala 5
+          </h4>
+
+          <a id="btn-bloco-1"
+            v-on:click="goToPageSala()"
+            target="_self"
+            class="d-inline-flex font-weight-light ml-2 mt-1"
+            style="text-decoration: none; color: gray"
+          >
+            Clique aqui para visualizar horários da sala.
+          </a>
+
+          <template v-slot:actions>
+          </template>
+        </base-material-chart-card>
+      </v-col>
+
+      <v-col id="col-sala-6"
+        cols="12"
+        lg="3"
+      >
+        <base-material-chart-card
+          color="blue"
+          hover-reveal
+          type="Bar"
+        >
+
+          <h4 class="card-title font-weight-light mt-2 ml-2">
+            Sala 6
+          </h4>
+
+          <a id="btn-bloco-1"
+            v-on:click="goToPageSala()"
+            target="_self"
+            class="d-inline-flex font-weight-light ml-2 mt-1"
+            style="text-decoration: none; color: gray"
+          >
+            Clique aqui para visualizar horários da sala.
+          </a>
+
+          <template v-slot:actions>
+          </template>
+        </base-material-chart-card>
+      </v-col>
+
+      <v-col id="col-sala-7"
+        cols="12"
+        lg="3"
+      >
+        <base-material-chart-card
+          color="blue"
+          hover-reveal
+          type="Bar"
+        >
+
+          <h4 class="card-title font-weight-light mt-2 ml-2">
+            Sala 7
+          </h4>
+
+          <a id="btn-bloco-1"
+            v-on:click="goToPageSala()"
+            target="_self"
+            class="d-inline-flex font-weight-light ml-2 mt-1"
+            style="text-decoration: none; color: gray"
+          >
+            Clique aqui para visualizar horários da sala.
+          </a>
+
+          <template v-slot:actions>
+          </template>
+        </base-material-chart-card>
+      </v-col>
+
+      <v-col id="col-sala-8"
+        cols="12"
+        lg="3"
+      >
+        <base-material-chart-card
+          color="blue"
+          hover-reveal
+          type="Bar"
+        >
+
+          <h4 class="card-title font-weight-light mt-2 ml-2">
+            Sala 8
+          </h4>
+
+          <a id="btn-bloco-1"
+            v-on:click="goToPageSala()"
+            target="_self"
+            class="d-inline-flex font-weight-light ml-2 mt-1"
+            style="text-decoration: none; color: gray"
+          >
+            Clique aqui para visualizar horários da sala.
           </a>
 
           <template v-slot:actions>
