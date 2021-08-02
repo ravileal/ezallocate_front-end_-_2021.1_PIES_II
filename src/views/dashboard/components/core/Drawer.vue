@@ -17,7 +17,7 @@
 
     <v-divider class="mb-1" />
 
-    <v-list dense nav>
+    <v-list dense nav >
       <v-list-item>
         <v-list-item-avatar class="align-self-center" color="white" contain>
           <!-- <v-img src="https://demos.creative-tim.com/vuetify-material-dashboard/favicon.ico" max-height="30" /> -->
@@ -26,7 +26,7 @@
 
         <v-list-item-content>
           <!-- <v-list-item-title class="text-h4" v-text="profile.title" /> -->
-          <p class="align-self-center" style="margin-top: 25px">Nome do Usuário<p/>
+          <div class="align-self-center" style="margin-top: 5px" :value="user.attributes.name">Nome do Usuário</div>
         </v-list-item-content>
       </v-list-item>
     </v-list>
@@ -39,7 +39,7 @@
       <div />
 
       <template v-for="(item, i) in computedItems">
-        <base-item-group v-if="item.children" :key="`group-${i}`" :item="item">
+        <base-item-group v-if="item.children" :key="`group-${i}`" :item="item" >
 
         </base-item-group>
 
@@ -52,9 +52,9 @@
     </v-list>
 
     <template v-slot:append>
-      <div class="signout" v-on:click="signout">
+      <div class="signout" v-on:click="signout" >
         <img src="@/assets/icons/exit.svg" alt="Imagem botao sair" />
-        <span>Sair</span>
+        <span >Sair</span>
       </div>
     </template>
   </v-navigation-drawer>
@@ -77,6 +77,8 @@ export default {
   },
 
   data: () => ({
+    user: '',
+
     items: [
       {
         icon: 'mdi-view-dashboard',
@@ -126,6 +128,11 @@ export default {
       // },
     ],
   }),
+
+  async beforeCreate() {
+    this.user = await Auth.currentAuthenticatedUser();
+    console.log(this.user);
+  },
 
   computed: {
     ...mapState(['barColor', 'barImage']),
