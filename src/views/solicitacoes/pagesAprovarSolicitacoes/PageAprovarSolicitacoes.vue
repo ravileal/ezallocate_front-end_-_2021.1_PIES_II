@@ -43,7 +43,7 @@
 </template>
 
 <script>
-import ListaSolicitacoesTable from '@/views/solicitacoes/pagesAprovarSolicitacoes/components/table/ListaSolicitacoesTable';
+import ListaSolicitacoesTable from '@/views/solicitacoes/components/table/ListaSolicitacoesTable';
 
 export default {
   data() {

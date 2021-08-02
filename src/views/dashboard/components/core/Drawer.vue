@@ -84,14 +84,19 @@ export default {
         to: '/',
       },
       {
-        icon: 'mdi-account',
-        title: 'user',
-        to: '/pages/user',
+        icon: 'mdi-calendar-account',
+        title: 'Minhas Solicitações',
+        to: '/minhasSolicitacoes',
       },
       {
         icon: 'mdi-calendar-clock',
         title: 'Solicitações Pendentes',
         to: '/aprovarSolicitacoes',
+      },
+      {
+        icon: 'mdi-account',
+        title: 'user',
+        to: '/pages/user',
       },
       // {
       //   // title: 'rtables',

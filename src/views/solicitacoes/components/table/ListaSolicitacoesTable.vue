@@ -35,7 +35,7 @@
 </template>
 
 <script>
-import FormInfoModal from '@/views/solicitacoes/pagesAprovarSolicitacoes/components/modal/FormInfoModal';
+import FormInfoModal from '@/views/solicitacoes/components/modal/FormInfoModal';
 
 export default {
   data() {

@@ -63,6 +63,12 @@ const router = new Router({
           path: 'sala',
           component: () => import('@/views/blocos/pagesSalas/Sala'),
         },
+        // Minhas Solicitações
+        {
+          name: 'Minhas Solicitações',
+          path: 'minhasSolicitacoes',
+          component: () => import('@/views/solicitacoes/pagesSolicitacoesUsuario/PageSolicitacoesUsuario'),
+        },
         // Aprovar Solicitações
         {
           name: 'Solicitações Pendentes',
