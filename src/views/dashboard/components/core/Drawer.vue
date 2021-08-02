@@ -88,6 +88,11 @@ export default {
         title: 'user',
         to: '/pages/user',
       },
+      {
+        icon: 'mdi-calendar-clock',
+        title: 'Solicitações Pendentes',
+        to: '/aprovarSolicitacoes',
+      },
       // {
       //   // title: 'rtables',
       //   title: 'Salas',
