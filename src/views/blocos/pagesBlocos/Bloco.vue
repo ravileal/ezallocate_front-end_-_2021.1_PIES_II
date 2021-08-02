@@ -11,7 +11,7 @@
         lg="3"
       >
         <base-material-chart-card
-          color="blue"
+          color="success"
           hover-reveal
           type="Bar"
         >
@@ -39,7 +39,7 @@
         lg="3"
       >
         <base-material-chart-card
-          color="blue"
+          color="success"
           hover-reveal
           type="Bar"
         >
@@ -67,7 +67,7 @@
         lg="3"
       >
         <base-material-chart-card
-          color="blue"
+          color="success"
           hover-reveal
           type="Bar"
         >
@@ -95,7 +95,7 @@
         lg="3"
       >
         <base-material-chart-card
-          color="blue"
+          color="success"
           hover-reveal
           type="Bar"
         >
@@ -123,7 +123,7 @@
         lg="3"
       >
         <base-material-chart-card
-          color="blue"
+          color="success"
           hover-reveal
           type="Bar"
         >
@@ -151,7 +151,7 @@
         lg="3"
       >
         <base-material-chart-card
-          color="blue"
+          color="success"
           hover-reveal
           type="Bar"
         >
@@ -179,7 +179,7 @@
         lg="3"
       >
         <base-material-chart-card
-          color="blue"
+          color="success"
           hover-reveal
           type="Bar"
         >
@@ -207,7 +207,7 @@
         lg="3"
       >
         <base-material-chart-card
-          color="blue"
+          color="success"
           hover-reveal
           type="Bar"
         >
