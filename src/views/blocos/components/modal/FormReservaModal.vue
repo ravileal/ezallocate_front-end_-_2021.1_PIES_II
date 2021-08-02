@@ -21,6 +21,7 @@
     <v-card>
       <v-card-title>
         <span class="text-h3">Solicitar Reserva</span>
+        <h4 class="text-h4"> {{sala.horario}} </h4>
       </v-card-title>
       <v-card-text>
         <v-container>
@@ -39,12 +40,12 @@
 
             >
               <v-select
-                :items="['Camilo', 'Wladmir', 'Diana', 'Carla']"
+                :items="['', 'Camilo', 'Wladmir', 'Diana', 'Carla']"
                 label="Escolha o professor responsável"
               ></v-select>
             </v-col>
 
-            <v-card-title>
+            <!-- <v-card-title>
               <span class="text-h5">Frequência de uso</span>
             </v-card-title>
 
@@ -73,7 +74,7 @@
                 :items="['1 semana', '2 semanas', '3 semanas', '4 semanas']"
                 label="Indique o período para reserva"
               ></v-select>
-            </v-col>
+            </v-col> -->
 
           </v-row>
         </v-container>
