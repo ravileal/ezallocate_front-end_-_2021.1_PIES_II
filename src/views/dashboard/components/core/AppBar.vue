@@ -62,6 +62,24 @@
       <v-icon>mdi-view-dashboard</v-icon>
     </v-btn>
 
+    <v-btn
+      class="ml-2"
+      min-width="0"
+      text
+      to="/minhasSolicitacoes"
+    >
+      <v-icon>mdi-calendar-account</v-icon>
+    </v-btn>
+
+    <v-btn
+      class="ml-2"
+      min-width="0"
+      text
+      to="/aprovarSolicitacoes"
+    >
+      <v-icon>mdi-calendar-clock</v-icon>
+    </v-btn>
+
     <v-menu
       bottom
       left

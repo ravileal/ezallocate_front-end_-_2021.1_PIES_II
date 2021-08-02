@@ -64,7 +64,7 @@
         lg="4"
       >
         <base-material-chart-card
-          color="blue"
+          color="success"
           hover-reveal
           type="Bar"
         >
@@ -127,7 +127,7 @@
         lg="4"
       >
         <base-material-chart-card
-          color="blue"
+          color="success"
           hover-reveal
           type="Line"
         >
@@ -190,7 +190,7 @@
         lg="4"
       >
         <base-material-chart-card
-          color="blue"
+          color="success"
           type="Line"
         >
           <template v-slot:reveal-actions>
@@ -252,7 +252,7 @@
         lg="4"
       >
         <base-material-chart-card
-          color="blue"
+          color="success"
           hover-reveal
           type="Line"
         >
@@ -316,11 +316,15 @@
 
 <script>
 
+import { Auth } from 'aws-amplify';
+
 export default {
   name: 'DashboardDashboard',
 
   data() {
     return {
+      user: '',
+
       dailySalesChart: {
         data: {
           labels: ['M', 'T', 'W', 'T', 'F', 'S', 'S'],
@@ -405,6 +409,11 @@ export default {
       list: {
       },
     };
+  },
+
+  async beforeCreate() {
+    this.user = await Auth.currentAuthenticatedUser();
+    console.log(this.user);
   },
 
   methods: {

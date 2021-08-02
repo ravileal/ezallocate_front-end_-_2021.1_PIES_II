@@ -2,7 +2,7 @@
   <v-container id="user-profile" fluid tag="section">
     <v-row justify="center">
       <v-col cols="12" md="8">
-        <base-material-card color="blue" hover-reveal type="Bar">
+        <base-material-card color="success" hover-reveal type="Bar">
           <template v-slot:heading>
             <div class="text-h3 font-weight-light" id="text-edit-profile">Edite seu Perfil</div>
 
@@ -94,7 +94,7 @@
                 </v-col>
 
                 <v-col cols="12" class="text-left">
-                  <v-btn id="btn-editProfile" color="blue" class="mr-0" v-on:click="updateUser()">
+                  <v-btn id="btn-editProfile" color="success" class="mr-0" v-on:click="updateUser()">
                     Atualizar dados
                   </v-btn>
                 </v-col>
