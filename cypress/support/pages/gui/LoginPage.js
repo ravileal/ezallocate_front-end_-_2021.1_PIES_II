@@ -23,7 +23,3 @@ Cypress.Commands.add('autenticarUsuario', () => {
 Cypress.Commands.add('verificarMensagemLoginInvalido', () => {
   cy.get('#login-error').should('contain', 'Usuario ou senha inválidos');
 });
-
-Cypress.Commands.add('testeOutraPagina', () => {
-  cy.visit('https://10minutemail.net/?lang=pt-br');
-});
