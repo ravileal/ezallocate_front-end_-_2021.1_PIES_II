@@ -14,7 +14,11 @@
 // ***********************************************************
 
 // Import commands.js using ES2015 syntax:
-import './commands'
+import './commands';
+import './pages/gui/LoginPage';
+import './pages/gui/DashboardPage';
 
 // Alternatively you can use CommonJS syntax:
 // require('./commands')
+
+require('cypress-xpath');

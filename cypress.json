@@ -1,3 +1,5 @@
 {
-    "baseUrl": "http://localhost:8080/login"
+    "baseUrl": "http://localhost:8080",
+    "viewportWidth": 1366,
+    "viewportHeight": 1024
 }
