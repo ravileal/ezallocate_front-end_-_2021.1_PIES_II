@@ -17,6 +17,9 @@
 import './commands';
 import './pages/gui/LoginPage';
 import './pages/gui/DashboardPage';
+import './pages/gui/BlocoPage';
+import './pages/gui/SalaPage';
+import './pages/gui/MinhasSolicitacoesPage';
 
 // Alternatively you can use CommonJS syntax:
 // require('./commands')
