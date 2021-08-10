@@ -15,6 +15,7 @@
   "dependencies": {
     "aws-amplify": "^4.1.2",
     "core-js": "^3.6.2",
+    "faker": "^5.5.3",
     "vue": "^2.6.11",
     "vue-i18n": "^8.15.3",
     "vue-router": "^3.1.3",
