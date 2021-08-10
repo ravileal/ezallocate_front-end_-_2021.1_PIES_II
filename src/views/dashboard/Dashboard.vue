@@ -2,15 +2,15 @@
   <v-container id="dashboard" fluid tag="section">
     <v-row>
       <v-col id="col-salas-alocadas" cols="12" sm="6" lg="3">
-        <base-material-stats-card color="red" icon="mdi-calendar-lock" title="Salas Alocadas" value="30" />
+        <base-material-stats-card color="red" icon="mdi-calendar-lock" title="Horários alocados" value="30" />
       </v-col>
 
       <v-col id="col-salas-reservadas" cols="12" sm="6" lg="3">
-        <base-material-stats-card color="#FFF176" icon="mdi-calendar-refresh" title="Salas Reservadas" value="15" />
+        <base-material-stats-card color="#FFF176" icon="mdi-calendar-refresh" title="Horários reservados" value="15" />
       </v-col>
 
       <v-col id="col-salas-disponiveis" cols="12" sm="6" lg="3">
-        <base-material-stats-card color="success" icon="mdi-calendar-check" title="Salas disponíveis" value="10" />
+        <base-material-stats-card color="success" icon="mdi-calendar-check" title="Horários disponíveis" value="10" />
       </v-col>
 
       <v-col id="col-salas-solicitacoes" cols="12" sm="6" lg="3">
