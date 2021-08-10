@@ -26,7 +26,7 @@
 
         <v-list-item-content>
           <!-- <v-list-item-title class="text-h4" v-text="profile.title" /> -->
-          <div class="align-self-center" style="margin-top: 5px" :value="user.attributes.name">Nome do Usuário</div>
+          <div class="align-self-center" style="margin-top: 5px" >{{user.attributes.name}}</div>
         </v-list-item-content>
       </v-list-item>
     </v-list>
