@@ -18,7 +18,7 @@
       </v-col>
 
       <v-col id="col-bloco-1" cols="12" lg="4">
-        <base-material-chart-card color="success" hover-reveal type="Bar">
+        <base-material-chart-card color="bloco1" hover-reveal type="Bar">
           <template v-slot:reveal-actions>
             <v-tooltip bottom>
               <template v-slot:activator="{ attrs, on }">
@@ -58,7 +58,7 @@
       </v-col>
 
       <v-col id="col-bloco-2" cols="12" lg="4">
-        <base-material-chart-card color="success" hover-reveal type="Line">
+        <base-material-chart-card color="bloco2" hover-reveal type="Line">
           <template v-slot:reveal-actions>
             <v-tooltip bottom>
               <template v-slot:activator="{ attrs, on }">
@@ -98,7 +98,7 @@
       </v-col>
 
       <v-col id="col-bloco-3" cols="12" lg="4">
-        <base-material-chart-card color="success" type="Line">
+        <base-material-chart-card color="bloco3" type="Line">
           <template v-slot:reveal-actions>
             <v-tooltip bottom>
               <template v-slot:activator="{ attrs, on }">
@@ -138,7 +138,7 @@
       </v-col>
 
       <v-col id="col-bloco-4" cols="12" lg="4">
-        <base-material-chart-card color="success" hover-reveal type="Line">
+        <base-material-chart-card color="bloco4" hover-reveal type="Line">
           <template v-slot:reveal-actions>
             <v-tooltip bottom>
               <template v-slot:activator="{ attrs, on }">
@@ -286,3 +286,19 @@ export default {
   },
 };
 </script>
+
+<style lang="sass">
+.flex-wrap
+  .bloco1
+    background-image: url("../../assets/blocos/bloco1.png") !important
+    background-size: 100% 100%
+  .bloco2
+    background-image: url("../../assets/blocos/bloco2.png") !important
+    background-size: 100% 100%
+  .bloco3
+    background-image: url("../../assets/blocos/bloco3.png") !important
+    background-size: 100% 100%
+  .bloco4
+    background-image: url("../../assets/blocos/bloco4.png") !important
+    background-size: 100% 100%
+</style>
