@@ -15,6 +15,7 @@
   },
   "dependencies": {
     "aws-amplify": "^4.1.2",
+    "axios": "^0.21.1",
     "core-js": "^3.6.2",
     "faker": "^5.5.3",
     "vue": "^2.6.11",
