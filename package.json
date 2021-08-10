@@ -11,7 +11,7 @@
     "now-start": "vue-cli-service serve",
     "test:e2e": "vue-cli-service test:e2e",
     "test:unit": "vue-cli-service test:unit",
-    "test:cy": "npx cypress open"
+    "test": "npx cypress open"
   },
   "dependencies": {
     "aws-amplify": "^4.1.2",
