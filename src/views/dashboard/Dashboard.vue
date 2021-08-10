@@ -1,87 +1,29 @@
 <template>
-  <v-container
-    id="dashboard"
-    fluid
-    tag="section"
-  >
+  <v-container id="dashboard" fluid tag="section">
     <v-row>
-
-      <v-col id="col-salas-alocadas"
-        cols="12"
-        sm="6"
-        lg="3"
-      >
-        <base-material-stats-card
-          color="red"
-          icon="mdi-calendar-lock"
-          title="Salas Alocadas"
-          value="30"
-        />
+      <v-col id="col-salas-alocadas" cols="12" sm="6" lg="3">
+        <base-material-stats-card color="red" icon="mdi-calendar-lock" title="Salas Alocadas" value="30" />
       </v-col>
 
-      <v-col id="col-salas-reservadas"
-        cols="12"
-        sm="6"
-        lg="3"
-      >
-        <base-material-stats-card
-          color="#FFF176"
-          icon="mdi-calendar-refresh"
-          title="Salas Reservadas"
-          value="15"
-        />
+      <v-col id="col-salas-reservadas" cols="12" sm="6" lg="3">
+        <base-material-stats-card color="#FFF176" icon="mdi-calendar-refresh" title="Salas Reservadas" value="15" />
       </v-col>
 
-      <v-col id="col-salas-disponiveis"
-        cols="12"
-        sm="6"
-        lg="3"
-      >
-
-        <base-material-stats-card
-          color="success"
-          icon="mdi-calendar-check"
-          title="Salas disponíveis"
-          value="10"
-        />
+      <v-col id="col-salas-disponiveis" cols="12" sm="6" lg="3">
+        <base-material-stats-card color="success" icon="mdi-calendar-check" title="Salas disponíveis" value="10" />
       </v-col>
 
-      <v-col id="col-salas-solicitacoes"
-        cols="12"
-        sm="6"
-        lg="3"
-      >
-        <base-material-stats-card
-          color="orange"
-          icon="mdi-calendar-alert"
-          title="Solicitações de reserva"
-          value="5"
-        />
+      <v-col id="col-salas-solicitacoes" cols="12" sm="6" lg="3">
+        <base-material-stats-card color="orange" icon="mdi-calendar-alert" title="Solicitações de reserva" value="5" />
       </v-col>
 
-      <v-col id="col-bloco-1"
-        cols="12"
-        lg="4"
-      >
-        <base-material-chart-card
-          color="success"
-          hover-reveal
-          type="Bar"
-        >
+      <v-col id="col-bloco-1" cols="12" lg="4">
+        <base-material-chart-card color="success" hover-reveal type="Bar">
           <template v-slot:reveal-actions>
             <v-tooltip bottom>
               <template v-slot:activator="{ attrs, on }">
-                <v-btn
-                  v-bind="attrs"
-                  color="info"
-                  icon
-                  v-on="on"
-                >
-                  <v-icon
-                    color="info"
-                  >
-                    mdi-refresh
-                  </v-icon>
+                <v-btn v-bind="attrs" color="info" icon v-on="on">
+                  <v-icon color="info"> mdi-refresh </v-icon>
                 </v-btn>
               </template>
 
@@ -90,12 +32,7 @@
 
             <v-tooltip bottom>
               <template v-slot:activator="{ attrs, on }">
-                <v-btn
-                  v-bind="attrs"
-                  light
-                  icon
-                  v-on="on"
-                >
+                <v-btn v-bind="attrs" light icon v-on="on">
                   <v-icon>mdi-pencil</v-icon>
                 </v-btn>
               </template>
@@ -104,11 +41,10 @@
             </v-tooltip>
           </template>
 
-          <h4 class="card-title font-weight-light mt-2 ml-2">
-            Bloco 1
-          </h4>
+          <h4 class="card-title font-weight-light mt-2 ml-2">Bloco 1</h4>
 
-          <a id="btn-bloco-1"
+          <a
+            id="btn-bloco-1"
             v-on:click="goToPageBlock(1)"
             target="_self"
             class="d-inline-flex font-weight-light ml-2 mt-1"
@@ -117,34 +53,17 @@
             Clique aqui para ver as salas existentes neste bloco.
           </a>
 
-          <template v-slot:actions>
-          </template>
+          <template v-slot:actions> </template>
         </base-material-chart-card>
       </v-col>
 
-      <v-col id="col-bloco-2"
-        cols="12"
-        lg="4"
-      >
-        <base-material-chart-card
-          color="success"
-          hover-reveal
-          type="Line"
-        >
+      <v-col id="col-bloco-2" cols="12" lg="4">
+        <base-material-chart-card color="success" hover-reveal type="Line">
           <template v-slot:reveal-actions>
             <v-tooltip bottom>
               <template v-slot:activator="{ attrs, on }">
-                <v-btn
-                  v-bind="attrs"
-                  color="info"
-                  icon
-                  v-on="on"
-                >
-                  <v-icon
-                    color="info"
-                  >
-                    mdi-refresh
-                  </v-icon>
+                <v-btn v-bind="attrs" color="info" icon v-on="on">
+                  <v-icon color="info"> mdi-refresh </v-icon>
                 </v-btn>
               </template>
 
@@ -153,12 +72,7 @@
 
             <v-tooltip bottom>
               <template v-slot:activator="{ attrs, on }">
-                <v-btn
-                  v-bind="attrs"
-                  light
-                  icon
-                  v-on="on"
-                >
+                <v-btn v-bind="attrs" light icon v-on="on">
                   <v-icon>mdi-pencil</v-icon>
                 </v-btn>
               </template>
@@ -167,11 +81,10 @@
             </v-tooltip>
           </template>
 
-          <h4 class="card-title font-weight-light mt-2 ml-2">
-            Bloco 2
-          </h4>
+          <h4 class="card-title font-weight-light mt-2 ml-2">Bloco 2</h4>
 
-          <a id="btn-bloco-2"
+          <a
+            id="btn-bloco-2"
             v-on:click="goToPageBlock(2)"
             target="_blank"
             class="d-inline-flex font-weight-light ml-2 mt-1"
@@ -180,33 +93,17 @@
             Clique aqui para ver as salas existentes neste bloco.
           </a>
 
-          <template v-slot:actions>
-          </template>
+          <template v-slot:actions> </template>
         </base-material-chart-card>
       </v-col>
 
-      <v-col id="col-bloco-3"
-        cols="12"
-        lg="4"
-      >
-        <base-material-chart-card
-          color="success"
-          type="Line"
-        >
+      <v-col id="col-bloco-3" cols="12" lg="4">
+        <base-material-chart-card color="success" type="Line">
           <template v-slot:reveal-actions>
             <v-tooltip bottom>
               <template v-slot:activator="{ attrs, on }">
-                <v-btn
-                  v-bind="attrs"
-                  color="info"
-                  icon
-                  v-on="on"
-                >
-                  <v-icon
-                    color="info"
-                  >
-                    mdi-refresh
-                  </v-icon>
+                <v-btn v-bind="attrs" color="info" icon v-on="on">
+                  <v-icon color="info"> mdi-refresh </v-icon>
                 </v-btn>
               </template>
 
@@ -215,12 +112,7 @@
 
             <v-tooltip bottom>
               <template v-slot:activator="{ attrs, on }">
-                <v-btn
-                  v-bind="attrs"
-                  light
-                  icon
-                  v-on="on"
-                >
+                <v-btn v-bind="attrs" light icon v-on="on">
                   <v-icon>mdi-pencil</v-icon>
                 </v-btn>
               </template>
@@ -229,11 +121,10 @@
             </v-tooltip>
           </template>
 
-          <h3 class="card-title font-weight-light mt-2 ml-2">
-            Bloco 3
-          </h3>
+          <h3 class="card-title font-weight-light mt-2 ml-2">Bloco 3</h3>
 
-          <a id="btn-bloco-3"
+          <a
+            id="btn-bloco-3"
             v-on:click="goToPageBlock(3)"
             target="_blank"
             class="d-inline-flex font-weight-light ml-2 mt-1"
@@ -242,34 +133,17 @@
             Clique aqui para ver as salas existentes neste bloco.
           </a>
 
-          <template v-slot:actions>
-          </template>
+          <template v-slot:actions> </template>
         </base-material-chart-card>
       </v-col>
 
-      <v-col id="col-bloco-4"
-        cols="12"
-        lg="4"
-      >
-        <base-material-chart-card
-          color="success"
-          hover-reveal
-          type="Line"
-        >
+      <v-col id="col-bloco-4" cols="12" lg="4">
+        <base-material-chart-card color="success" hover-reveal type="Line">
           <template v-slot:reveal-actions>
             <v-tooltip bottom>
               <template v-slot:activator="{ attrs, on }">
-                <v-btn
-                  v-bind="attrs"
-                  color="info"
-                  icon
-                  v-on="on"
-                >
-                  <v-icon
-                    color="info"
-                  >
-                    mdi-refresh
-                  </v-icon>
+                <v-btn v-bind="attrs" color="info" icon v-on="on">
+                  <v-icon color="info"> mdi-refresh </v-icon>
                 </v-btn>
               </template>
 
@@ -278,12 +152,7 @@
 
             <v-tooltip bottom>
               <template v-slot:activator="{ attrs, on }">
-                <v-btn
-                  v-bind="attrs"
-                  light
-                  icon
-                  v-on="on"
-                >
+                <v-btn v-bind="attrs" light icon v-on="on">
                   <v-icon>mdi-pencil</v-icon>
                 </v-btn>
               </template>
@@ -292,11 +161,10 @@
             </v-tooltip>
           </template>
 
-          <h4 class="card-title font-weight-light mt-2 ml-2">
-            Bloco 4
-          </h4>
+          <h4 class="card-title font-weight-light mt-2 ml-2">Bloco 4</h4>
 
-          <a id="btn-bloco-4"
+          <a
+            id="btn-bloco-4"
             v-on:click="goToPageBlock(4)"
             target="_blank"
             class="d-inline-flex font-weight-light ml-2 mt-1"
@@ -305,17 +173,14 @@
             Clique aqui para ver as salas existentes neste bloco.
           </a>
 
-          <template v-slot:actions>
-          </template>
+          <template v-slot:actions> </template>
         </base-material-chart-card>
       </v-col>
-
     </v-row>
   </v-container>
 </template>
 
 <script>
-
 import { Auth } from 'aws-amplify';
 
 export default {
@@ -328,9 +193,7 @@ export default {
       dailySalesChart: {
         data: {
           labels: ['M', 'T', 'W', 'T', 'F', 'S', 'S'],
-          series: [
-            [12, 17, 7, 17, 23, 18, 38],
-          ],
+          series: [[12, 17, 7, 17, 23, 18, 38]],
         },
         options: {
           lineSmooth: this.$chartist.Interpolation.cardinal({
@@ -349,9 +212,7 @@ export default {
       dataCompletedTasksChart: {
         data: {
           labels: ['12am', '3pm', '6pm', '9pm', '12pm', '3am', '6am', '9am'],
-          series: [
-            [230, 750, 450, 300, 280, 240, 200, 190],
-          ],
+          series: [[230, 750, 450, 300, 280, 240, 200, 190]],
         },
         options: {
           lineSmooth: this.$chartist.Interpolation.cardinal({
@@ -370,10 +231,7 @@ export default {
       emailsSubionChart: {
         data: {
           labels: ['Ja', 'Fe', 'Ma', 'Ap', 'Mai', 'Ju', 'Jul', 'Au', 'Se', 'Oc', 'No', 'De'],
-          series: [
-            [542, 443, 320, 780, 553, 453, 326, 434, 568, 610, 756, 895],
-
-          ],
+          series: [[542, 443, 320, 780, 553, 453, 326, 434, 568, 610, 756, 895]],
         },
         options: {
           axisX: {
@@ -389,25 +247,25 @@ export default {
           },
         },
         responsiveOptions: [
-          ['screen and (max-width: 640px)', {
-            seriesBarDistance: 5,
-            axisX: {
-              labelInterpolationFnc(value) {
-                return value[0];
+          [
+            'screen and (max-width: 640px)',
+            {
+              seriesBarDistance: 5,
+              axisX: {
+                labelInterpolationFnc(value) {
+                  return value[0];
+                },
               },
             },
-          }],
+          ],
         ],
       },
-      headers: [
-      ],
+      headers: [],
       tabs: 0,
       tasks: {
-        0: [
-        ],
+        0: [],
       },
-      list: {
-      },
+      list: {},
     };
   },
 
