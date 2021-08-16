@@ -16,11 +16,11 @@
       <v-icon>mdi-view-dashboard</v-icon>
     </v-btn>
 
-    <v-btn class="ml-2" min-width="0" text to="/minhasSolicitacoes">
+    <v-btn class="ml-2" min-width="0" text to="/minhasSolicitacoes" v-show="showMinhasSolicitacoes">
       <v-icon>mdi-calendar-account</v-icon>
     </v-btn>
 
-    <v-btn class="ml-2" min-width="0" text to="/aprovarSolicitacoes">
+    <v-btn class="ml-2" min-width="0" text to="/aprovarSolicitacoes" v-show="showAprovarSolicitacoes">
       <v-icon>mdi-calendar-clock</v-icon>
     </v-btn>
 
@@ -44,6 +44,7 @@
 /* eslint-disable implicit-arrow-linebreak */
 // Components
 import { VHover, VListItem } from 'vuetify/lib';
+import { Auth } from 'aws-amplify';
 
 // Utilities
 import { mapState, mapMutations } from 'vuex';
@@ -84,6 +85,8 @@ export default {
     value: {
       type: Boolean,
       default: false,
+      showMinhasSolicitacoes: false,
+      showAprovarSolicitacoes: false,
     },
   },
 
@@ -100,11 +103,29 @@ export default {
   computed: {
     ...mapState(['drawer']),
   },
-
+  async beforeCreate() {
+    this.user = await Auth.currentAuthenticatedUser();
+    const type = this.user.attributes['custom:type'].toLowerCase();
+    this.configureCustomActions(type);
+  },
   methods: {
     ...mapMutations({
       setDrawer: 'SET_DRAWER',
     }),
+    configureCustomActions(type) {
+      switch (type) {
+        case 'admin':
+          this.showAprovarSolicitacoes = true;
+          break;
+        case 'professor':
+          this.showAprovarSolicitacoes = true;
+          break;
+        case 'aluno':
+          this.showMinhasSolicitacoes = true;
+          break;
+        default:
+      }
+    },
   },
 };
 </script>
