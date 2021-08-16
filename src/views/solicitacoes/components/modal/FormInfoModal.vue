@@ -18,6 +18,9 @@
           <p>
             Responsável : <label id="txt-responsavel-horario-1"> {{ solicitacao.responsavel }} </label>
           </p>
+          <p v-show="solicitacao.prof_responsavel">
+            Professor : <label id="txt-responsavel-horario-1"> {{ solicitacao.prof_responsavel }} </label>
+          </p>
           <p>
             Dia da Semana : <label id="txt-dia-horario-1"> {{ dia_semana }}</label>
           </p>

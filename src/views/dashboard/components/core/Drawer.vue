@@ -83,16 +83,6 @@ export default {
         to: '/',
       },
       {
-        icon: 'mdi-calendar-account',
-        title: 'Minhas Solicitações',
-        to: '/minhasSolicitacoes',
-      },
-      {
-        icon: 'mdi-calendar-clock',
-        title: 'Solicitações Pendentes',
-        to: '/aprovarSolicitacoes',
-      },
-      {
         icon: 'mdi-account',
         title: 'Perfil do Usuário',
         to: '/pages/user',
@@ -102,6 +92,9 @@ export default {
 
   async beforeCreate() {
     this.user = await Auth.currentAuthenticatedUser();
+    const type = this.user.attributes['custom:type'].toLowerCase();
+    const customRoutes = this.configureCustomRoutes(type);
+    this.items = [this.items[0], customRoutes, ...this.items.slice(1)];
   },
 
   computed: {
@@ -137,6 +130,30 @@ export default {
       Auth.signOut()
         .then(data => console.log(data))
         .catch(err => console.log(err));
+    },
+    configureCustomRoutes(type) {
+      const minhasSolicitacoes = {
+        icon: 'mdi-calendar-account',
+        title: 'Minhas Solicitações',
+        to: '/minhasSolicitacoes',
+      };
+      const aprovarSolicitacoes = {
+        icon: 'mdi-calendar-clock',
+        title: 'Solicitações Pendentes',
+        to: '/aprovarSolicitacoes',
+      };
+      switch (type) {
+        case 'admin':
+          return this.isNotDefinedRoute(aprovarSolicitacoes) ? aprovarSolicitacoes : [];
+        case 'professor':
+          return this.isNotDefinedRoute(aprovarSolicitacoes) ? aprovarSolicitacoes : [];
+        case 'aluno':
+          return this.isNotDefinedRoute(minhasSolicitacoes) ? minhasSolicitacoes : [];
+        default:
+      }
+    },
+    isNotDefinedRoute({ title }) {
+      return !this.items.some(route => route.title === title);
     },
   },
 };

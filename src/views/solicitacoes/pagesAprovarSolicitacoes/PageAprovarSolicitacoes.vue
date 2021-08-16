@@ -49,9 +49,17 @@ export default {
   methods: {
     async getListOcupacoes() {
       const listOcupacoes = await axios.get('ocupacoes');
-      this.listSolicitacoes = listOcupacoes.filter(
-        item => item.responsavel === this.user.name && item.status === 'pendente' && !item.prof_responsavel,
-      );
+      this.listSolicitacoes = listOcupacoes.filter(this.filtersToSolicitacoes);
+    },
+    filtersToSolicitacoes(item) {
+      const type = this.user['custom:type'].toLowerCase();
+      const isAdmin = type === 'admin';
+      const isProfessor = type === 'professor';
+      if (!isAdmin && !isProfessor) return false;
+
+      const profileFilters = isAdmin ? !item.prof_responsavel : item.prof_responsavel === this.user.name;
+
+      return item.status === 'pendente' && profileFilters;
     },
   },
 };
