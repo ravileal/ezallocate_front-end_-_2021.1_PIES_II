@@ -21,6 +21,10 @@
           <p>
             Dia da Semana : <label id="txt-dia-horario-1"> {{ dia_semana }}</label>
           </p>
+          <p>
+            Status :
+            <label id="txt-dia-horario-1"> {{ captalizeFirstLetter(solicitacao.status) }}</label>
+          </p>
         </v-card-text>
 
         <v-divider></v-divider>
@@ -45,7 +49,6 @@ export default {
   props: ['solicitacao'],
   created() {
     this.dia_semana = this.weekToPortuguese();
-    // console.log(this.solicitacao);
   },
   methods: {
     weekToPortuguese() {
@@ -67,6 +70,9 @@ export default {
         default:
           return 'Indefinido';
       }
+    },
+    captalizeFirstLetter(string) {
+      return string.charAt(0).toUpperCase() + string.slice(1);
     },
   },
 };
