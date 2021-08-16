@@ -2,19 +2,34 @@
   <v-container id="dashboard" fluid tag="section">
     <v-row>
       <v-col id="col-salas-alocadas" cols="12" sm="6" lg="3">
-        <base-material-stats-card color="red" icon="mdi-calendar-lock" title="Horários alocados" value="30" />
+        <base-material-stats-card color="red" icon="mdi-calendar-lock" title="Horários alocados" :value="alocados" />
       </v-col>
 
       <v-col id="col-salas-reservadas" cols="12" sm="6" lg="3">
-        <base-material-stats-card color="#FFF176" icon="mdi-calendar-refresh" title="Horários reservados" value="15" />
+        <base-material-stats-card
+          color="#FFF176"
+          icon="mdi-calendar-refresh"
+          title="Horários reservados"
+          :value="reservados"
+        />
       </v-col>
 
       <v-col id="col-salas-disponiveis" cols="12" sm="6" lg="3">
-        <base-material-stats-card color="success" icon="mdi-calendar-check" title="Horários disponíveis" value="10" />
+        <base-material-stats-card
+          color="success"
+          icon="mdi-calendar-check"
+          title="Horários disponíveis"
+          :value="disponiveis"
+        />
       </v-col>
 
       <v-col id="col-salas-solicitacoes" cols="12" sm="6" lg="3">
-        <base-material-stats-card color="orange" icon="mdi-calendar-alert" title="Solicitações de reserva" value="5" />
+        <base-material-stats-card
+          color="orange"
+          icon="mdi-calendar-alert"
+          title="Solicitações de reserva"
+          :value="solicitacoes"
+        />
       </v-col>
 
       <v-col id="col-bloco-1" cols="12" lg="4">
@@ -182,6 +197,7 @@
 
 <script>
 import { Auth } from 'aws-amplify';
+import axios from '../../../axios-client';
 
 export default {
   name: 'DashboardDashboard',
@@ -189,7 +205,10 @@ export default {
   data() {
     return {
       user: '',
-
+      alocados: 0,
+      reservados: 0,
+      solicitacoes: 0,
+      disponiveis: 0,
       dailySalesChart: {
         data: {
           labels: ['M', 'T', 'W', 'T', 'F', 'S', 'S'],
@@ -271,6 +290,10 @@ export default {
 
   async beforeCreate() {
     this.user = await Auth.currentAuthenticatedUser();
+    const ocupacoes = await axios.get('ocupacoes');
+    this.reservados = ocupacoes.reduce((acc, ocupacao) => (ocupacao.status === 'reservado' ? acc + 1 : acc), 0);
+    this.alocados = ocupacoes.reduce((acc, ocupacao) => (ocupacao.status === 'alocado' ? acc + 1 : acc), 0);
+    this.solicitacoes = ocupacoes.reduce((acc, ocupacao) => (ocupacao.status === 'pendente' ? acc + 1 : acc), 0);
   },
 
   methods: {
