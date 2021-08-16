@@ -8,7 +8,7 @@ Cypress.Commands.add('verificarPaginaSala', () => {
 });
 
 Cypress.Commands.add('abrirOpcaoSolicitarReserva', () => {
-  cy.xpath('/html/body/div/div/div/main/div/section/div[1]/div[2]/div/table/tbody/tr[3]/td[5]/button').click();
+  cy.xpath('/html/body/div/div/div/main/div/section/div[1]/div[2]/div/table/tbody/tr[6]/td[5]/button').click();
 });
 
 Cypress.Commands.add('preencherTodosCampos', (descricao) => {
@@ -35,5 +35,5 @@ Cypress.Commands.add('cancelarCriacaoReserva', () => {
 });
 
 Cypress.Commands.add('irParaMinhasSolicitacoes', () => {
-  cy.xpath('/html/body/div/div/div/nav/div[2]/div[2]/a[2]/div[2]/div[1]').click();
+  cy.xpath('/html/body/div/div/div[2]/nav/div[2]/div[2]/a[2]').click();
 });
