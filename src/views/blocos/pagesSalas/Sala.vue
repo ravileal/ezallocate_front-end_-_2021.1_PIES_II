@@ -33,6 +33,7 @@
 </template>
 
 <script>
+/* eslint-disable implicit-arrow-linebreak */
 import HorariosSalaTable from '@/views/blocos/components/table/HorariosSalaTable';
 import moment from 'moment';
 import axios from '../../../../axios-client';
@@ -61,9 +62,14 @@ export default {
   methods: {
     filterHorarios(listOcupacao) {
       const ocupacaoDefault = defaultHorario => this.listOcupacao[this.listHorarios.indexOf(defaultHorario)];
-      const findHorarioOcupacao = defaultHorario => listOcupacao.find(({ horario }) => horario === defaultHorario);
+      const findHorarioOcupacao = defaultHorario =>
+        listOcupacao.find(ocupacao => this.receivedList(ocupacao, defaultHorario));
       const selectedOcupacao = horario => findHorarioOcupacao(horario) || ocupacaoDefault(horario);
       this.listOcupacao = this.listHorarios.map(selectedOcupacao);
+    },
+    receivedList({ horario, status }, defaultHorario) {
+      const allowedStatus = status === 'alocado' || status === 'reservado';
+      return horario === defaultHorario && allowedStatus;
     },
     loadDeafultList() {
       this.listOcupacao = this.listHorarios.map(horario => ({

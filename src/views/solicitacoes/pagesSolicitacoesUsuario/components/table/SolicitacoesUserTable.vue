@@ -46,8 +46,7 @@ export default {
         ...solicitacao,
         status: 'cancelado',
       };
-      const result = await axios.put('ocupacoes', data);
-      console.log(result);
+      await axios.put('ocupacoes', data);
       await this.getListOcupacoes();
     },
     async getListOcupacoes() {
