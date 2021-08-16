@@ -12,5 +12,5 @@ Cypress.Commands.add('irParaBloco1', () => {
 });
 
 Cypress.Commands.add('irParaUserProfile', () => {
-  cy.xpath('/html/body/div/div/div/nav/div[2]/div[2]/a[4]/div[2]/div[1]').click();
+  cy.xpath('/html/body/div/div/div/nav/div[2]/div[2]/a[3]').click();
 });

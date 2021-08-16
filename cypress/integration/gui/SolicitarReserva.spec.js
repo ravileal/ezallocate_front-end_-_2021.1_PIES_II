@@ -9,37 +9,37 @@ describe('Solicitar Reserva', () => {
     cy.verificarPaginaDashboard();
   });
 
-  // it('Solicitar reserva preenchendo todos os dados', () => {
-  //   cy.irParaBloco1();
-  //   cy.verificarPaginaBloco();
+  it('Solicitar reserva preenchendo todos os dados', () => {
+    cy.irParaBloco1();
+    cy.verificarPaginaBloco();
 
-  //   cy.irParaSala1();
-  //   cy.verificarPaginaSala();
+    cy.irParaSala1();
+    cy.verificarPaginaSala();
 
-  //   cy.abrirOpcaoSolicitarReserva();
-  //   cy.preencherTodosCampos('Essa é a descrição');
+    cy.abrirOpcaoSolicitarReserva();
+    cy.preencherTodosCampos('Essa é a descrição');
 
-  //   cy.realizarSolicitacao();
+    cy.realizarSolicitacao();
 
-  //   cy.irParaMinhasSolicitacoes();
-  //   cy.verificarPaginaMinhasSolicitacoes();
-  // });
+    cy.irParaMinhasSolicitacoes();
+    cy.verificarPaginaMinhasSolicitacoes();
+  });
 
-  // it('Solicitar reserva preenchendo apenas a descrição', () => {
-  //   cy.irParaBloco1();
-  //   cy.verificarPaginaBloco();
+  it('Solicitar reserva preenchendo apenas a descrição', () => {
+    cy.irParaBloco1();
+    cy.verificarPaginaBloco();
 
-  //   cy.irParaSala1();
-  //   cy.verificarPaginaSala();
+    cy.irParaSala1();
+    cy.verificarPaginaSala();
 
-  //   cy.abrirOpcaoSolicitarReserva();
-  //   cy.preencherDescricao('Essa é a descrição');
+    cy.abrirOpcaoSolicitarReserva();
+    cy.preencherDescricao('Essa é a descrição');
 
-  //   cy.realizarSolicitacao();
+    cy.realizarSolicitacao();
 
-  //   cy.irParaMinhasSolicitacoes();
-  //   cy.verificarPaginaMinhasSolicitacoes();
-  // });
+    cy.irParaMinhasSolicitacoes();
+    cy.verificarPaginaMinhasSolicitacoes();
+  });
 
   it('Solicitar reserva preenchendo apenas o responsável', () => {
     cy.irParaBloco1();
