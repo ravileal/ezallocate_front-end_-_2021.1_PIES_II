@@ -44,6 +44,7 @@
                     color="blue"
                     label="Nome Completo"
                     class="purple-input"
+                    disabled
                   />
                 </v-col>
 

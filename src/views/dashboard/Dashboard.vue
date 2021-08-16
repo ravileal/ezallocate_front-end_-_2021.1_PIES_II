@@ -271,7 +271,6 @@ export default {
 
   async beforeCreate() {
     this.user = await Auth.currentAuthenticatedUser();
-    console.log(this.user);
   },
 
   methods: {

@@ -1,23 +1,19 @@
 <template>
-    <tbody>
-        <tr id="horario-1" v-for="sala in listSalas" :key="sala.id">
-            <td>
-                <v-avatar
-                  :color="statusColor[sala.status]"
-                  size="15"
-                ></v-avatar>
-            </td>
-            <td> {{sala.horario}}</td>
-            <td> {{sala.atividade}} </td>
-            <td>
-                <InfoHorariosModal :sala="sala"/>
-            </td>
-            <td>
-                <FormReservaModal :sala="sala"/>
-            </td>
-        </tr>
-    </tbody>
-
+  <tbody>
+    <tr id="horario-1" v-for="ocupacao in listOcupacao" :key="ocupacao.id">
+      <td>
+        <v-avatar :color="statusColor[ocupacao.status]" size="15"></v-avatar>
+      </td>
+      <td>{{ ocupacao.horario }}</td>
+      <td>{{ ocupacao.descricao }}</td>
+      <td>
+        <InfoHorariosModal :ocupacao="ocupacao" />
+      </td>
+      <td>
+        <FormReservaModal :ocupacao="ocupacao" :salaId="salaId" />
+      </td>
+    </tr>
+  </tbody>
 </template>
 
 <script>
@@ -31,14 +27,12 @@ export default {
       statusColor: {
         alocado: 'red',
         reservado: 'yellow',
-        disponivel: 'green',
+        livre: 'green',
       },
+      notIsAdmin: true,
     };
   },
-  props: ['listSalas'],
-  created() {
-    console.log(this.listSalas);
-  },
+  props: ['listOcupacao', 'salaId'],
   components: {
     InfoHorariosModal,
     FormReservaModal,
@@ -46,6 +40,4 @@ export default {
 };
 </script>
 
-<style>
-
-</style>
+<style></style>

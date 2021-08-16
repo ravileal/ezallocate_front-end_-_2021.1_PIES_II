@@ -17,16 +17,16 @@
 
     <v-divider class="mb-1" />
 
-    <v-list dense nav >
+    <v-list dense nav>
       <v-list-item>
         <v-list-item-avatar class="align-self-center" color="white" contain>
           <!-- <v-img src="https://demos.creative-tim.com/vuetify-material-dashboard/favicon.ico" max-height="30" /> -->
-          <v-img src="https://www.facom.ufms.br/wp-content/uploads/2018/07/palestra.png"/>
+          <v-img src="https://www.facom.ufms.br/wp-content/uploads/2018/07/palestra.png" />
         </v-list-item-avatar>
 
         <v-list-item-content>
           <!-- <v-list-item-title class="text-h4" v-text="profile.title" /> -->
-          <div class="align-self-center" style="margin-top: 5px" >{{user.attributes.name}}</div>
+          <div class="align-self-center" style="margin-top: 5px">{{ user.attributes.name }}</div>
         </v-list-item-content>
       </v-list-item>
     </v-list>
@@ -39,9 +39,7 @@
       <div />
 
       <template v-for="(item, i) in computedItems">
-        <base-item-group v-if="item.children" :key="`group-${i}`" :item="item" >
-
-        </base-item-group>
+        <base-item-group v-if="item.children" :key="`group-${i}`" :item="item"> </base-item-group>
 
         <base-item v-else :key="`item-${i}`" :item="item" />
       </template>
@@ -52,16 +50,15 @@
     </v-list>
 
     <template v-slot:append>
-      <div class="signout" v-on:click="signout" >
+      <div class="signout" v-on:click="signout">
         <img src="@/assets/icons/exit.svg" alt="Imagem botao sair" />
-        <span >Sair</span>
+        <span>Sair</span>
       </div>
     </template>
   </v-navigation-drawer>
 </template>
 
 <script>
-
 // Utilities
 import { mapState } from 'vuex';
 import { Auth } from 'aws-amplify';
@@ -97,41 +94,14 @@ export default {
       },
       {
         icon: 'mdi-account',
-        title: 'user',
+        title: 'Perfil do Usuário',
         to: '/pages/user',
       },
-      // {
-      //   // title: 'rtables',
-      //   title: 'Salas',
-      //   icon: 'mdi-clipboard-outline',
-      //   to: '/tables/regular-tables',
-      // },
-      // {
-      //   title: 'typography',
-      //   icon: 'mdi-format-font',
-      //   to: '/components/typography',
-      // },
-      // {
-      //   title: 'icons',
-      //   icon: 'mdi-chart-bubble',
-      //   to: '/components/icons',
-      // },
-      // {
-      //   title: 'google',
-      //   icon: 'mdi-map-marker',
-      //   to: '/maps/google-maps',
-      // },
-      // {
-      //   title: 'notifications',
-      //   icon: 'mdi-bell',
-      //   to: '/components/notifications',
-      // },
     ],
   }),
 
   async beforeCreate() {
     this.user = await Auth.currentAuthenticatedUser();
-    console.log(this.user);
   },
 
   computed: {
@@ -169,9 +139,7 @@ export default {
         .catch(err => console.log(err));
     },
   },
-
 };
-
 </script>
 
 <style lang="sass">
