@@ -27,8 +27,8 @@
 </template>
 
 <script>
-import ListaSolicitacoesTable from '@/views/solicitacoes/components/table/ListaSolicitacoesTable';
 import { Auth } from 'aws-amplify';
+import ListaSolicitacoesTable from '@/views/solicitacoes/components/table/ListaSolicitacoesTable';
 import axios from '../../../../axios-client';
 
 export default {

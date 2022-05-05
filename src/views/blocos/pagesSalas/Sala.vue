@@ -34,8 +34,8 @@
 
 <script>
 /* eslint-disable implicit-arrow-linebreak */
-import HorariosSalaTable from '@/views/blocos/components/table/HorariosSalaTable';
 import moment from 'moment';
+import HorariosSalaTable from '@/views/blocos/components/table/HorariosSalaTable';
 import axios from '../../../../axios-client';
 
 export default {

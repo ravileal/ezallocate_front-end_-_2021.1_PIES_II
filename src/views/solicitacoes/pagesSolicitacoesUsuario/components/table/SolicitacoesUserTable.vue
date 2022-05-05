@@ -21,8 +21,8 @@
 </template>
 
 <script>
-import FormInfoModal from '@/views/solicitacoes/components/modal/FormInfoModal';
 import { Auth } from 'aws-amplify';
+import FormInfoModal from '@/views/solicitacoes/components/modal/FormInfoModal';
 import axios from '../../../../../../axios-client';
 
 export default {
